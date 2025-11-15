@@ -1,0 +1,42 @@
+{
+  "json.schemaDownload.enable": false,
+  "json.validate.enable": true,
+  "files.associations": {
+    "appsettings*.json": "jsonc"
+  },
+
+  // ✅ C# IntelliSense Settings
+  "dotnet.inlayHints.enableInlayHintsForParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
+  "dotnet.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
+  "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent": false,
+  "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName": false,
+  "dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix": false,
+
+  // ✅ Editor Hover Settings
+  "editor.hover.enabled": true,
+  "editor.hover.delay": 300,
+  "editor.hover.sticky": true,
+
+  // ✅ C# Code Lens (show references above methods)
+  "dotnet.codeLens.enableReferencesCodeLens": true,
+  "dotnet.codeLens.enableTestsCodeLens": true,
+
+  // ✅ Symbol Information
+  "dotnet.symbolSearch.enabled": true,
+
+  // ✅ Quick Info (hover tooltips)
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+
+  // ✅ Parameter Hints
+  "editor.parameterHints.enabled": true,
+  "editor.parameterHints.cycle": true
+}

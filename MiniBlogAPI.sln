@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBlogAPI", "MiniBlogAPI.csproj", "{5C2578FF-8434-A508-ADF1-07F1955BE4A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C2578FF-8434-A508-ADF1-07F1955BE4A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2578FF-8434-A508-ADF1-07F1955BE4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2578FF-8434-A508-ADF1-07F1955BE4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2578FF-8434-A508-ADF1-07F1955BE4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAA8AE03-2DE3-4E9B-8668-9A482220D162}
+	EndGlobalSection
+EndGlobal
