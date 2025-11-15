@@ -18,9 +18,9 @@
   "dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix": false,
 
   // ✅ Editor Hover Settings
-  "editor.hover.enabled": true,
-  "editor.hover.delay": 300,
-  "editor.hover.sticky": true,
+  "editor.hover.enabled": false,// tôi đã sửa thành false
+  "editor.hover.delay": 1000,
+  "editor.hover.sticky": false,// tôi đã sửa thành false
 
   // ✅ C# Code Lens (show references above methods)
   "dotnet.codeLens.enableReferencesCodeLens": true,
@@ -37,6 +37,6 @@
   },
 
   // ✅ Parameter Hints
-  "editor.parameterHints.enabled": true,
+  "editor.parameterHints.enabled": false,  // tôi đã chuyển thành false
   "editor.parameterHints.cycle": true
 }
