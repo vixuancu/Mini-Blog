@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore ;
 using MiniBlogAPI.Data;
+using MiniBlogAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // ==================== Add services to the container ====================
 
-// 1. Configure DbContext với PostgreSQL
+//  Configure DbContext với PostgreSQL
 builder.Services.AddDbContext<BlogContext>(options =>
 {
     // Lấy connection string từ appsettings.json
@@ -21,10 +22,15 @@ builder.Services.AddDbContext<BlogContext>(options =>
         options.EnableDetailedErrors();
     }
 });
-// 2. Add Controllers support
+// 2. Register Repositories với Dependency Injection
+// Scoped lifetime = 1 instance per HTTP request
+builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
+builder.Services.AddScoped<IUserRepository, UserRepository>();            // User-specific
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+//  Add Controllers support
 builder.Services.AddControllers();
 
-// 3. Add API Explorer (cho Swagger/OpenAPI)
+//  Add API Explorer (cho Swagger/OpenAPI)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
