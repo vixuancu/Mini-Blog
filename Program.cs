@@ -96,6 +96,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();            // User-specific
 builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>(); 
 
 // 5. Register Services với DI
 builder.Services.AddScoped<IAuthService, AuthService>();
