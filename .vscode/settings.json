@@ -37,6 +37,6 @@
   },
 
   // ✅ Parameter Hints
-  "editor.parameterHints.enabled": false,  // tôi đã chuyển thành false
+  "editor.parameterHints.enabled": true,  // tôi đã chuyển thành false
   "editor.parameterHints.cycle": true
 }
