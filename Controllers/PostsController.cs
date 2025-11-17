@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MiniBlogAPI.Exceptions;
 using MiniBlogAPI.Models.DTOs;
 using MiniBlogAPI.Models.Entities;
 using MiniBlogAPI.Repositories;
@@ -91,16 +92,10 @@ public class PostsController : ControllerBase
     [AllowAnonymous] // public endpoint - không cần JWT token
     public async Task<IActionResult> GetPostById(int id)
     {
-        try
-        {
             var post = await _postRepository.GetWithDetailsAsync(id);
             if (post == null)
             {
-                return NotFound(new
-                {
-                    success = false,
-                    message = "Post not found"
-                });
+                throw new NotFoundException("Post", id);  // Middleware catch & return 404
             }
 
             // map entity to DTO
@@ -122,21 +117,9 @@ public class PostsController : ControllerBase
                 CommentCount = post.Comments?.Count ?? 0
             };
 
-            return Ok(new
-            {
-                success = true,
-                data = postDto
-            });
-        }
-        catch (System.Exception ex)
-        {
-            _logger.LogError(ex, "Error fetching post by ID");
-            return StatusCode(500, new
-            {
-                success = false,
-                message = "An error occurred while fetching the post"
-            });
-        }
+            return Ok(new { success = true, data = post });
+            // Không cần try-catch - middleware sẽ handle!
+        
     }
 
     // Search posts theo title.

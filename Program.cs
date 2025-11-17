@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using MiniBlogAPI.middleware;
 using MiniBlogAPI.Data;
 using MiniBlogAPI.Models;
 using MiniBlogAPI.Repositories;
@@ -112,6 +113,8 @@ builder.Services.AddOpenApi();
 var app = builder.Build();
 
 // ==================== Configure the HTTP request pipeline ====================
+// Exception Handling - PHẢI ĐẦU TIÊN để catch tất cả exceptions
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Development: Enable Swagger UI
 if (app.Environment.IsDevelopment())
